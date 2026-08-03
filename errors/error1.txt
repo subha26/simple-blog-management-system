@@ -1,0 +1,146 @@
+(base) subhajitpanda@fedora:~/Projects/SimpleBlog$ docker compose ps
+WARN[0000] /home/subhajitpanda/Projects/SimpleBlog/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+NAME             IMAGE               COMMAND                  SERVICE      CREATED         STATUS                          PORTS
+simpleblog-db    mariadb:11          "docker-entrypoint.s…"   db           5 minutes ago   Restarting (2) 30 seconds ago   
+simpleblog-pma   phpmyadmin:latest   "/docker-entrypoint.…"   phpmyadmin   5 minutes ago   Up 5 minutes                    0.0.0.0:8081->80/tcp, [::]:8081->80/tcp
+simpleblog-web   simpleblog-web      "docker-php-entrypoi…"   web          5 minutes ago   Up 5 minutes                    0.0.0.0:8080->80/tcp, [::]:8080->80/tcp
+(base) subhajitpanda@fedora:~/Projects/SimpleBlog$ docker compose logs db
+WARN[0000] /home/subhajitpanda/Projects/SimpleBlog/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+simpleblog-db  | 2026-08-03 13:37:03+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | 2026-08-03 13:37:04+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
+simpleblog-db  | 2026-08-03 13:37:04+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+simpleblog-db  | 2026-08-03 13:37:04+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | ls: cannot open directory '/docker-entrypoint-initdb.d/': Permission denied
+simpleblog-db  | 2026-08-03 13:37:05+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | 2026-08-03 13:37:05+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
+simpleblog-db  | 2026-08-03 13:37:05+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+simpleblog-db  | 2026-08-03 13:37:05+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | ls: cannot open directory '/docker-entrypoint-initdb.d/': Permission denied
+simpleblog-db  | 2026-08-03 13:37:07+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | 2026-08-03 13:37:07+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
+simpleblog-db  | 2026-08-03 13:37:07+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+simpleblog-db  | 2026-08-03 13:37:07+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | ls: cannot open directory '/docker-entrypoint-initdb.d/': Permission denied
+simpleblog-db  | 2026-08-03 13:37:08+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | 2026-08-03 13:37:09+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
+simpleblog-db  | 2026-08-03 13:37:09+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+simpleblog-db  | 2026-08-03 13:37:09+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | ls: cannot open directory '/docker-entrypoint-initdb.d/': Permission denied
+simpleblog-db  | 2026-08-03 13:37:10+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | 2026-08-03 13:37:11+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
+simpleblog-db  | 2026-08-03 13:37:11+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+simpleblog-db  | 2026-08-03 13:37:11+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | ls: cannot open directory '/docker-entrypoint-initdb.d/': Permission denied
+simpleblog-db  | 2026-08-03 13:37:13+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | 2026-08-03 13:37:14+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
+simpleblog-db  | 2026-08-03 13:37:14+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+simpleblog-db  | 2026-08-03 13:37:14+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | ls: cannot open directory '/docker-entrypoint-initdb.d/': Permission denied
+simpleblog-db  | 2026-08-03 13:37:18+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | 2026-08-03 13:37:18+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
+simpleblog-db  | 2026-08-03 13:37:18+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+simpleblog-db  | 2026-08-03 13:37:18+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | ls: cannot open directory '/docker-entrypoint-initdb.d/': Permission denied
+simpleblog-db  | 2026-08-03 13:37:26+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | 2026-08-03 13:37:26+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
+simpleblog-db  | 2026-08-03 13:37:26+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+simpleblog-db  | 2026-08-03 13:37:26+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | ls: cannot open directory '/docker-entrypoint-initdb.d/': Permission denied
+simpleblog-db  | 2026-08-03 13:37:40+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | 2026-08-03 13:37:40+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
+simpleblog-db  | 2026-08-03 13:37:40+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+simpleblog-db  | 2026-08-03 13:37:40+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | ls: cannot open directory '/docker-entrypoint-initdb.d/': Permission denied
+simpleblog-db  | 2026-08-03 13:38:07+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | 2026-08-03 13:38:07+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
+simpleblog-db  | 2026-08-03 13:38:07+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+simpleblog-db  | 2026-08-03 13:38:07+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | ls: cannot open directory '/docker-entrypoint-initdb.d/': Permission denied
+simpleblog-db  | 2026-08-03 13:38:59+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | 2026-08-03 13:39:00+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
+simpleblog-db  | 2026-08-03 13:39:00+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+simpleblog-db  | 2026-08-03 13:39:00+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | ls: cannot open directory '/docker-entrypoint-initdb.d/': Permission denied
+simpleblog-db  | 2026-08-03 13:40:01+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | 2026-08-03 13:40:01+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
+simpleblog-db  | 2026-08-03 13:40:01+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+simpleblog-db  | 2026-08-03 13:40:01+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | ls: cannot open directory '/docker-entrypoint-initdb.d/': Permission denied
+simpleblog-db  | 2026-08-03 13:41:02+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | 2026-08-03 13:41:02+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
+simpleblog-db  | 2026-08-03 13:41:02+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+simpleblog-db  | 2026-08-03 13:41:02+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | ls: cannot open directory '/docker-entrypoint-initdb.d/': Permission denied
+simpleblog-db  | 2026-08-03 13:42:03+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | 2026-08-03 13:42:04+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
+simpleblog-db  | 2026-08-03 13:42:04+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+simpleblog-db  | 2026-08-03 13:42:04+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | ls: cannot open directory '/docker-entrypoint-initdb.d/': Permission denied
+simpleblog-db  | 2026-08-03 13:43:05+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | 2026-08-03 13:43:05+00:00 [Warn] [Entrypoint]: /sys/fs/cgroup///memory.pressure not writable, functionality unavailable to MariaDB
+simpleblog-db  | 2026-08-03 13:43:05+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+simpleblog-db  | 2026-08-03 13:43:05+00:00 [Note] [Entrypoint]: Entrypoint script for MariaDB Server 1:11.8.8+maria~ubu2404 started.
+simpleblog-db  | ls: cannot open directory '/docker-entrypoint-initdb.d/': Permission denied
+(base) subhajitpanda@fedora:~/Projects/SimpleBlog$ docker ps -a
+CONTAINER ID   IMAGE               COMMAND                  CREATED          STATUS                         PORTS                                     NAMES
+e2ce4bdd6ba2   phpmyadmin:latest   "/docker-entrypoint.…"   7 minutes ago    Up 7 minutes                   0.0.0.0:8081->80/tcp, [::]:8081->80/tcp   simpleblog-pma
+3709625d21ce   simpleblog-web      "docker-php-entrypoi…"   7 minutes ago    Up 7 minutes                   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   simpleblog-web
+4900f46e6032   mariadb:11          "docker-entrypoint.s…"   7 minutes ago    Restarting (2) 6 seconds ago                                             simpleblog-db
+3b5b5936e5cc   hello-world         "/hello"                 52 minutes ago   Exited (0) 52 minutes ago                                                clever_fermi
+8b1fe754372a   hello-world         "/hello"                 59 minutes ago   Exited (0) 59 minutes ago                                                distracted_burnell
+(base) subhajitpanda@fedora:~/Projects/SimpleBlog$ cat docker-compose.yml 
+version: "3.9"
+
+services:
+  web:
+    build: .
+    container_name: simpleblog-web
+
+    ports:
+      - "8080:80"
+
+    volumes:
+      - ./src:/var/www/html
+
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:11
+
+    container_name: simpleblog-db
+
+    restart: unless-stopped
+
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_DATABASE: simple_blog
+      MARIADB_USER: bloguser
+      MARIADB_PASSWORD: blogpass
+
+    ports:
+      - "3306:3306"
+
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./database:/docker-entrypoint-initdb.d
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+
+    container_name: simpleblog-pma
+
+    depends_on:
+      - db
+
+    ports:
+      - "8081:80"
+
+    environment:
+      PMA_HOST: db
+
+volumes:
+  db_data:
+(base) subhajitpanda@fedora:~/Projects/SimpleBlog$ 
+
+
