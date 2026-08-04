@@ -2,17 +2,88 @@
 
 require_once "../config/auth.php";
 
+require_once "../config/database.php";
+
+$postCount = $pdo->query("SELECT COUNT(*) FROM posts")->fetchColumn();
+
+$commentCount = $pdo->query("SELECT COUNT(*) FROM comments")->fetchColumn();
+
+$pendingCount = $pdo->query("
+SELECT COUNT(*)
+FROM comments
+WHERE status='pending'
+")->fetchColumn();
+
 include "../includes/header.php";
 
 include "../includes/navbar.php";
 
 ?>
 
-<div class="container mt-5">
+<div class="row mb-4">
 
-<div class="card shadow">
+    <!-- Posts Card -->
+    <div class="col-md-4 mb-3">
 
-<div class="card-body">
+        <a href="manage_posts.php"
+           class="text-decoration-none">
+
+            <div class="card bg-primary text-white shadow h-100">
+
+                <div class="card-body text-center">
+
+                    <h1><?= $postCount ?></h1>
+
+                    <h5>Total Posts</h5>
+
+                </div>
+
+            </div>
+
+        </a>
+
+    </div>
+
+    <!-- Comments Card -->
+    <div class="col-md-4 mb-3">
+
+        <a href="../index.php"
+           class="text-decoration-none">
+
+            <div class="card bg-success text-white shadow h-100">
+
+                <div class="card-body text-center">
+
+                    <h1><?= $commentCount ?></h1>
+
+                    <h5>Total Comments</h5>
+
+                </div>
+
+            </div>
+
+        </a>
+
+    </div>
+
+    <!-- Pending Card -->
+    <div class="col-md-4 mb-3">
+
+        <div class="card bg-warning shadow h-100">
+
+            <div class="card-body text-center">
+
+                <h1><?= $pendingCount ?></h1>
+
+                <h5>Pending Comments</h5>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 <h2>
 
@@ -36,35 +107,33 @@ Welcome,
 
 <div class="list-group">
 
-<a
+    <a href="create_post.php"
+       class="list-group-item list-group-item-action">
 
-href="create_post.php"
+        ➕ Create New Post
 
-class="list-group-item">
+    </a>
 
-Create New Post
+    <a href="manage_posts.php"
+       class="list-group-item list-group-item-action">
 
-</a>
+        📝 Manage Posts
 
-<a
+    </a>
 
-href="../index.php"
+    <a href="../index.php"
+       class="list-group-item list-group-item-action">
 
-class="list-group-item">
+        🌍 View Website
 
-View Website
+    </a>
 
-</a>
+    <a href="../logout.php"
+       class="list-group-item list-group-item-action text-danger">
 
-<a
+        🚪 Logout
 
-href="../logout.php"
-
-class="list-group-item text-danger">
-
-Logout
-
-</a>
+    </a>
 
 </div>
 

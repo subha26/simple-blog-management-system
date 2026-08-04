@@ -41,21 +41,25 @@ $posts = $query->fetchAll(PDO::FETCH_ASSOC);
 
                 </h3>
 
+                <p class="text-muted">
+
+                    Published on
+
+                    <?= date("d M Y", strtotime($post['created_at'])) ?>
+
+                </p>
+
                 <p>
 
-                    <?= substr(
-                        htmlspecialchars($post['content']),
-                        0,
-                        150
-                    ); ?>
+                    <?= substr(htmlspecialchars($post['content']),0,180) ?>
 
                     ...
 
                 </p>
 
                 <a
-                    href="post.php?id=<?= $post['id'] ?>"
-                    class="btn btn-primary">
+                href="post.php?id=<?= $post['id'] ?>"
+                class="btn btn-primary">
 
                     Read More
 

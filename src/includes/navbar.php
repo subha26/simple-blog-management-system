@@ -1,30 +1,90 @@
+<?php
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+$isLoggedIn = isset($_SESSION['user_id']);
+
+// Are we currently inside /admin/ ?
+$isAdminPage = strpos($_SERVER['PHP_SELF'], '/admin/') !== false;
+
+?>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
 <div class="container">
 
-<a
+    <a class="navbar-brand"
+       href="<?= $isAdminPage ? "../index.php" : "index.php"; ?>">
 
-class="navbar-brand"
+        Simple Blog
 
-href="/">
+    </a>
 
-Simple Blog
+    <div class="d-flex align-items-center">
 
-</a>
+        <?php if($isLoggedIn): ?>
 
-<div>
+            <span class="text-white me-3">
 
-<a
+                Welcome,
 
-class="btn btn-outline-light"
+                <strong><?= htmlspecialchars($_SESSION['full_name']) ?></strong>
 
-href="admin/login.php">
+            </span>
 
-Admin Login
+            <?php if($isAdminPage): ?>
 
-</a>
+                <a
+                href="../index.php"
+                class="btn btn-outline-light me-2">
 
-</div>
+                    View Website
+
+                </a>
+
+                <a
+                href="../logout.php"
+                class="btn btn-danger">
+
+                    Logout
+
+                </a>
+
+            <?php else: ?>
+
+                <a
+                href="admin/dashboard.php"
+                class="btn btn-outline-light me-2">
+
+                    Dashboard
+
+                </a>
+
+                <a
+                href="logout.php"
+                class="btn btn-danger">
+
+                    Logout
+
+                </a>
+
+            <?php endif; ?>
+
+        <?php else: ?>
+
+            <a
+            href="admin/login.php"
+            class="btn btn-outline-light">
+
+                Admin Login
+
+            </a>
+
+        <?php endif; ?>
+
+    </div>
 
 </div>
 
