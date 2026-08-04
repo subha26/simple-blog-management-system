@@ -7,8 +7,12 @@
 # Logs
 *.log
 
-# macOS
+# OS files
 .DS_Store
-
-# Windows
 Thumbs.db
+
+# PHP
+vendor/
+
+# Docker volumes (if ever created locally)
+db_data/
