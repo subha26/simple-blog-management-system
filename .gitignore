@@ -16,3 +16,6 @@ vendor/
 
 # Docker volumes (if ever created locally)
 db_data/
+
+*.sql.bak
+simple_blog_backup.sql

@@ -1,5 +1,6 @@
 <?php
 
+require_once '../includes/session.php';
 require_once "../config/auth.php";
 require_once "../config/database.php";
 
@@ -98,6 +99,10 @@ Delete
 
 </table>
 
+    <a href="dashboard.php"
+            class="btn btn-secondary">
+                ← Back to Dashboard
+    </a>
 </div>
 
 <?php include "../includes/footer.php"; ?>

@@ -1,7 +1,7 @@
 <?php
 
+require_once '../includes/session.php';
 require_once "../config/auth.php";
-
 require_once "../config/database.php";
 
 $postCount = $pdo->query("SELECT COUNT(*) FROM posts")->fetchColumn();
@@ -47,7 +47,7 @@ include "../includes/navbar.php";
     <!-- Comments Card -->
     <div class="col-md-4 mb-3">
 
-        <a href="../index.php"
+        <a href="manage_comments.php"
            class="text-decoration-none">
 
             <div class="card bg-success text-white shadow h-100">
@@ -109,30 +109,32 @@ Welcome,
 
     <a href="create_post.php"
        class="list-group-item list-group-item-action">
-
         ➕ Create New Post
-
     </a>
 
     <a href="manage_posts.php"
        class="list-group-item list-group-item-action">
-
         📝 Manage Posts
+    </a>
 
+    <a href="manage_comments.php"
+       class="list-group-item list-group-item-action">
+        💬 Manage Comments
+    </a>
+
+    <a href="change_password.php"
+       class="list-group-item list-group-item-action">
+        🔐 Change Password
     </a>
 
     <a href="../index.php"
        class="list-group-item list-group-item-action">
-
         🌍 View Website
-
     </a>
 
     <a href="../logout.php"
        class="list-group-item list-group-item-action text-danger">
-
         🚪 Logout
-
     </a>
 
 </div>

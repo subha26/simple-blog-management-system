@@ -1,6 +1,13 @@
+![PHP](https://img.shields.io/badge/PHP-8.3-blue)
+![MariaDB](https://img.shields.io/badge/MariaDB-11-green)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple)
+![Docker](https://img.shields.io/badge/Docker-Ready-blue)
+
 # Simple Blog Management System
 
-A Dockerized blog management system built using PHP, MariaDB, Bootstrap and PDO.
+![Homepage](docs/screenshots/01-homepage.png)
+
+A Dockerized Blog Management System built using PHP, MariaDB, Bootstrap and Docker.
 
 ## Features
 

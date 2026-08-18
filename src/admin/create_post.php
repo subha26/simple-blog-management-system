@@ -1,7 +1,9 @@
 <?php
 
+require_once '../includes/session.php';
 require_once "../config/auth.php";
 require_once "../config/database.php";
+require_once "../includes/functions.php";
 
 $message = "";
 
@@ -16,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     |--------------------------------------------------------------------------
     */
 
-    $slug = strtolower($title);
+    $slug = createSlug($title);
 
     $slug = preg_replace('/[^a-z0-9]+/', '-', $slug);
 
@@ -63,11 +65,14 @@ include "../includes/navbar.php";
 
 <div class="card-body">
 
-<h2>
+<!-- Flex container to align heading and button side-by-side -->
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="mb-0">Create Blog Post</h2>
+                <a href="dashboard.php" class="btn btn-secondary">
+                    ← Back to Dashboard
+                </a>
+            </div>
 
-Create Blog Post
-
-</h2>
 
 <?php if($message): ?>
 

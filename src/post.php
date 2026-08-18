@@ -1,5 +1,6 @@
 <?php
 
+require_once "includes/session.php";
 require_once "config/database.php";
 
 include "includes/header.php";
@@ -236,6 +237,14 @@ Submit Comment
 
 </div>
 
+</div>
+
+<div class="d-flex align-items-center justify-content-center mt-4">
+
+    <a href="index.php"
+        class="btn btn-secondary">
+            ← Back to All Posts
+    </a>
 </div>
 
 <?php

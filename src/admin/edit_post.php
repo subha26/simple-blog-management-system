@@ -1,5 +1,6 @@
 <?php
 
+require_once '../includes/session.php';
 require_once "../config/auth.php";
 require_once "../config/database.php";
 
@@ -58,33 +59,46 @@ include "../includes/navbar.php";
 
 <form method="POST">
 
-<div class="mb-3">
-<label>Title</label>
+    <div class="mb-3">
+        <label>Title</label>
 
-<input
-type="text"
-name="title"
-class="form-control"
-value="<?= htmlspecialchars($post["title"]) ?>"
-required>
+        <input
+            type="text"
+            name="title"
+            class="form-control"
+            value="<?= htmlspecialchars($post["title"]) ?>"
+            required>
+    </div>
 
-</div>
+    <div class="mb-3">
 
-<div class="mb-3">
+        <label>Content</label>
 
-<label>Content</label>
+        <textarea
+            name="content"
+            rows="12"
+            class="form-control"
+            required><?= htmlspecialchars($post["content"]) ?></textarea>
 
-<textarea
-name="content"
-rows="12"
-class="form-control"
-required><?= htmlspecialchars($post["content"]) ?></textarea>
+    </div>
 
-</div>
+    <div class="d-flex gap-2">
 
-<button class="btn btn-primary">
-Update Post
-</button>
+        <button type="submit" class="btn btn-primary">
+            Update Post
+        </button>
+
+        <a href="edit_post.php?id=<?= $id ?>"
+           class="btn btn-secondary">
+            Discard Changes
+        </a>
+
+        <a href="manage_posts.php"
+           class="btn btn-outline-dark">
+            Back to Manage Posts
+        </a>
+
+    </div>
 
 </form>
 
